@@ -1,0 +1,8 @@
+.aurelien {
+    max-height: 350px;
+    overflow: hidden;
+}
+
+.aurelien>img {
+    object-fit: cover;
+}
