@@ -19,7 +19,7 @@
     </header>
 
     <!-- Carrousel -->
-    <div id="carouselExample" class="carousel slide">
+    <div id="carouselExample" class="carousel slide my-3">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="pics/slide-1.jpg" class="d-block w-100 aurelien" alt="Spiderman">
@@ -39,8 +39,10 @@
     </div>
 
     <!-- Cards -->
+    <h2 class="my-3">L'équipe des Avengers</h2>
+
     <section id="team" class="d-flex flex-wrap justify-content-between mt-3">
-        <div class="card mt-3" style="width: 18rem;">
+        <div class="card my-3" style="width: 18rem;">
             <img src="pics/lesly.jpg" class="card-img-top" alt="Lesly Lodin">
             <div class="card-body">
                 <h5 class="card-title">Lesly</h5>
@@ -52,12 +54,13 @@
     </section>
 
     <!-- Formulaire -->
-    <h2>Rejoindre les Avengers</h2>
+    <h2 class="my-3">Rejoindre les Avengers</h2>
 
-    <form action="traitement.php" method="post">
+    <form action="traitement.php" method="post" class="my-3">
         <div class="mb-3">
             <label for="prenom" class="form-label">Nom de super-héros</label>
-            <input type="text" name="prenom" id="prenom" class="form-control" required pattern="[a-zA-Z\u00c0-\u017e '\-]{1,15}">
+            <input type="text" name="prenom" id="prenom" class="form-control" required
+                pattern="[a-zA-Z\u00c0-\u017e '\-]{1,15}">
             <!-- https://cheatography.com/davechild/cheat-sheets/regular-expressions/ -->
         </div>
 
