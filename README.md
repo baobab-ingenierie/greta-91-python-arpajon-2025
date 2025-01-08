@@ -11,7 +11,7 @@ Projets "fil rouge" réalisés du **20 décembre 2024 au 2 avril 2025** avec l'�
 - [ ] Bases de données SQL
 - [ ] Mathématiques et statistiques
 - [ ] Projet Python
-- [ ] Préparation à la certification Programming Essential In Python CISCO
+- [ ] Préparation à la certification Programming Essential in Python
 
 ## Langages et technologies utilisés
 + HTML5
