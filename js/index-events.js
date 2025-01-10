@@ -27,7 +27,57 @@ document.querySelector('#langue').addEventListener(
         // Affiche message
         alert(traduceMessage(this.value));
 
-        // Remplit liste pays
+        // Remplit liste pays avec AJAX et
+        // l'API https://restcountries.com
+        let sLang;
+        switch (this.value.toUpperCase()) {
+            case 'EN':
+                sLang = 'english';
+                break;
+            case 'ES':
+                sLang = 'spanish';
+                break;
+            case 'DE':
+                sLang = 'german';
+                break;
+            default:
+                sLang = 'french'
+        }
+        let sUrl = 'https://restcountries.com/v3.1/lang/' + sLang;
+
+        // Prépare la requête
+        let oXhr = new XMLHttpRequest();
+
+        // Ouvre la requête
+        oXhr.open('get', sUrl);
+
+        // Envoie la requête vers le serveur
+        oXhr.send(null);
+
+        // Ecoute l'événement readyStateChange
+        oXhr.addEventListener(
+            'readystatechange',
+            function () {
+                // Si requête est terminée
+                if (oXhr.readyState === 4 && (oXhr.status === 0 || oXhr.status === 200)) {
+                    // Transforme le résultat en objet
+                    let oData = JSON.parse(oXhr.responseText);
+                    console.log(oData);
+
+                    // Parcourt chaque pays du tableau
+                    // et l'ajoute à la liste PAYS
+                    let oPays = document.querySelector('#pays');
+                    oPays.innerHTML = '';
+                    let oOpt;
+                    oData.forEach(pays => {
+                        oOpt = document.createElement('option');
+                        oOpt.value = pays.cca2; // Code pays
+                        oOpt.textContent = pays.translations.fra.official;
+                        oPays.appendChild(oOpt);
+                    });
+                }
+            }
+        );
     }
 );
 
